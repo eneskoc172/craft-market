@@ -4,6 +4,7 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -17,18 +18,38 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: '',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
         }}
       />
+      
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
+          title: '',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'logo-tableau' : 'logo-tableau'} color={color} />
+          ),
+        }}
+      />
+     
+      <Tabs.Screen
+        name="index2"
+        options={{
+          title: '',
+          tabBarIcon: ({ color, focused }) => (
+            <AntDesign name={focused ? 'shoppingcart' : 'shoppingcart'} size={28} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="explore2"
+        options={{
+          title: '',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'person' : 'person-outline'} color={color} />
           ),
         }}
       />
