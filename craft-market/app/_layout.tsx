@@ -1,11 +1,12 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { checkAuthStatus } from '../lib/auth'; 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -16,23 +17,38 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+  const [isLoggedIn, setIsLoggedIn] = useState(null); // Oturum durumu
+  const router = useRouter();
 
-  if (!loaded) {
-    return null;
+  useEffect(() => {
+    const checkLoginStatus = async () => {
+      const loggedIn = await checkAuthStatus(); // Oturum durumu kontrol fonksiyonu
+      setIsLoggedIn(loggedIn);
+
+      if (!loggedIn) {
+        router.replace('/login'); // Eğer giriş yapılmamışsa login ekranına yönlendirme
+      } else {
+        SplashScreen.hideAsync(); // Oturum açılmışsa splash ekranını gizle
+      }
+    };
+
+    checkLoginStatus();
+  }, []);
+
+  if (isLoggedIn === null) {
+    return null; // Oturum durumu yüklenirken boş bir ekran göster
   }
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="login" options={{ headerShown: false }} />
+       
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="login" 
+        options={{ headerShown: false }}
+       />
         <Stack.Screen name="+not-found" />
       </Stack>
-    </ThemeProvider>
+      </ThemeProvider>
   );
 }
