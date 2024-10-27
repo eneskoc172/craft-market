@@ -5,6 +5,7 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -30,17 +31,17 @@ export default function TabLayout() {
         options={{
           title: '',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'logo-tableau' : 'logo-tableau'} color={color} />
+            <MaterialIcons name={focused ? 'category' : 'category'} size={32} color={color} />
           ),
         }}
       />
      
       <Tabs.Screen
-        name="index2"
+        name="cart"
         options={{
           title: '',
           tabBarIcon: ({ color, focused }) => (
-            <AntDesign name={focused ? 'shoppingcart' : 'shoppingcart'} size={28} color={color} />
+            <AntDesign name={focused ? 'shoppingcart' : 'shoppingcart'} size={32} color={color} />
           ),
         }}
       />
