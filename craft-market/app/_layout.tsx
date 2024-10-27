@@ -4,7 +4,7 @@ import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
-
+import React from 'react';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { checkAuthStatus } from '../lib/auth'; 
 
@@ -47,7 +47,10 @@ export default function RootLayout() {
         <Stack.Screen name="login" 
         options={{ headerShown: false }}
        />
-        <Stack.Screen name="+not-found" />
+          <Stack.Screen name="product-deail" 
+        options={{ headerShown: false }}
+       />
+        <Stack.Screen name="+not-found"  options={{ headerShown: false }}/>
       </Stack>
       </ThemeProvider>
   );
