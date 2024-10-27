@@ -1,6 +1,6 @@
 import { Link, Stack, useRouter } from 'expo-router';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-
+import React from 'react';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ export default function LoginScreen() {
       <View style={{
         width: '100%',
         height: 800,
-        backgroundColor: '#0DBFBF',
+        backgroundColor: '#FF6347',
         position: 'relative',
         top: -200,
         borderBottomStartRadius: 250
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   button: {
-    backgroundColor: '#0DBFBF',
+    backgroundColor: '#FF6347',
     borderRadius: 25,
     height: 50,
     justifyContent: 'center',
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     color: '#6c757d',
   },
   signupLink: {
-    color: '#56cfe1',
+    color: '#FF6347',
     fontWeight: 'bold',
   },
 });
