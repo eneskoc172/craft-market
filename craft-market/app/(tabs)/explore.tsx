@@ -1,102 +1,192 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
-import React from 'react';
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { Image, StyleSheet, Platform, TouchableOpacity, FlatList, Text, View, TextInput, ScrollView } from 'react-native';
 
-export default function TabTwoScreen() {
+import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import React from 'react';
+
+const categories = [
+  { id: '1', name: 'All' },
+  { id: '2', name: 'Vegetables' },
+  { id: '3', name: 'Fish' },
+];
+
+const topProducts = [
+  { id: '1', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') },
+  { id: '2', name: 'Gedang', weight: '100g', price: 10, unit: '/kg', image: require('../../assets/images/banana.png') },
+  { id: '3', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') },
+  { id: '4', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') },
+  { id: '5', name: 'Gedang', weight: '100g', price: 10, unit: '/kg', image: require('../../assets/images/banana.png') },
+  { id: '6', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') }
+];
+
+const recommendations = [
+  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/avocado.png') },
+  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/orange.png') },
+  { id: '3', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/avocado.png') },
+  { id: '4', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/orange.png') },
+  { id: '5', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/avocado.png') },
+  { id: '6', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/orange.png') },
+];
+
+
+
+export default function CategotyScreen() {
+  const router = useRouter();
+
+  const ProductCard = ({ product }) => (
+    <TouchableOpacity
+    onPress={()=> router.replace('/product-deail')} style={styles.productCard}>
+      <View style={{ width: 120, alignItems: 'center' }}>
+  
+  
+        <Image source={product.image} style={styles.productImage} />
+      </View>
+      <Text style={styles.productName}>{product.name}</Text>
+      <Text style={styles.productWeight}>weight <Text style={{ fontWeight: '900', color: 'black' }}>{product.weight}</Text></Text>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: 120, paddingVertical: 8 }}>
+        <Text style={styles.productPrice}>${product.price}{product.unit}</Text>
+        <TouchableOpacity style={styles.addButton}>
+          <Text style={styles.addButtonText}>+</Text>
+        </TouchableOpacity>
+      </View>
+    </TouchableOpacity>
+  );
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+    <ScrollView style={styles.container}>
+
+      {/* Top Products */}
+      <View style={{flexDirection:'row',justifyContent:'space-between',paddingVertical:8}}>
+        <Text style={styles.sectionTitle}>Vegetables</Text>
+        <Text style={styles.sectionTitle}>Show All</Text>
+      </View>
+
+      <FlatList
+        horizontal
+        data={topProducts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ProductCard product={item} />}
+      />
+       <FlatList
+        horizontal
+        data={topProducts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ProductCard product={item} />}
+      />
+
+      {/* Recommendations */}
+      <View style={{flexDirection:'row',justifyContent:'space-between',paddingVertical:8}}>
+      <Text style={styles.sectionTitle}>Fruit</Text>
+      <Text style={styles.sectionTitle}>Show All</Text>
+      </View>
+      <FlatList
+        horizontal
+        data={recommendations}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ProductCard product={item} />}
+      />
+       <FlatList
+        horizontal
+        data={topProducts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ProductCard product={item} />}
+      />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    backgroundColor: '#F4F4FC',
+    paddingHorizontal: 16,
+    paddingTop: 40,
   },
-  titleContainer: {
+  header: {
+    marginBottom: 16,
+  },
+  greeting: {
+    fontSize: 24,
+    fontWeight: '600',
+  },
+  username: {
+    fontSize: 20,
+    fontWeight: '700',
+  },
+  location: {
+    fontSize: 14,
+    color: '#888',
+  },
+  searchBar: {
     flexDirection: 'row',
-    gap: 8,
+    alignItems: 'center',
+    marginVertical: 16,
+    backgroundColor: '#f1f1f1',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+  },
+  searchInput: {
+    flex: 1,
+    height: 40,
+  },
+  filterButton: {
+    marginLeft: 10,
+  },
+  categories: {
+    flexDirection: 'row',
+    marginBottom: 16,
+  },
+  categoryButton: {
+    backgroundColor: '#FCFEFF',
+    paddingHorizontal: 16,
+    paddingVertical:8,
+    borderRadius: 16,
+    marginRight: 8,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    marginVertical: 8,
+  },
+  productCard: {
+    width: 140,
+    padding: 10,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    marginVertical: 10,
+    marginHorizontal:8
+
+  },
+  productImage: {
+    width: 120,
+    height: 100,
+    resizeMode: 'contain',
+  },
+  productName: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginTop: 8,
+  },
+  productWeight: {
+    fontSize: 14,
+    color: '#888',
+    paddingVertical: 4
+  },
+  productPrice: {
+    fontSize: 14,
+    fontWeight: '700',
+    marginVertical: 4,
+  },
+  addButton: {
+    backgroundColor: '#FF6347',
+    width: 28,
+    height: 28,
+    borderRadius: 7,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  addButtonText: {
+    color: '#FFF',
+    fontWeight: '700',
+    fontSize: 20
   },
 });
