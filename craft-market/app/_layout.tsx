@@ -50,6 +50,18 @@ export default function RootLayout() {
           <Stack.Screen name="product-deail" 
         options={{ headerShown: false }}
        />
+          <Stack.Screen name="edit-profile" 
+        options={{ headerShown: false }}
+       />
+          <Stack.Screen name="change-password" 
+        options={{ headerShown: false }}
+       />
+         <Stack.Screen name="orders" 
+        options={{ headerShown: false }}
+       />
+        <Stack.Screen name="order-detail" 
+        options={{ headerShown: false }}
+       />
         <Stack.Screen name="+not-found"  options={{ headerShown: false }}/>
       </Stack>
       </ThemeProvider>
