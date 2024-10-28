@@ -28,7 +28,7 @@ export default function HomeScreen() {
 
   const ProductCard = ({ product }) => (
     <TouchableOpacity
-    onPress={()=> router.replace('/-deail')} style={styles.productCard}>
+    onPress={()=> router.replace('/product-deail')} style={styles.productCard}>
       <View style={{ width: 120, alignItems: 'center' }}>
   
   
