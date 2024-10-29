@@ -62,6 +62,9 @@ export default function RootLayout() {
         <Stack.Screen name="order-detail" 
         options={{ headerShown: false }}
        />
+         <Stack.Screen name="favorites" 
+        options={{ headerShown: false }}
+       />
         <Stack.Screen name="+not-found"  options={{ headerShown: false }}/>
       </Stack>
       </ThemeProvider>
