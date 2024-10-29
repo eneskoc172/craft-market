@@ -65,6 +65,9 @@ export default function RootLayout() {
          <Stack.Screen name="favorites" 
         options={{ headerShown: false }}
        />
+           <Stack.Screen name="address" 
+        options={{ headerShown: false }}
+       />
         <Stack.Screen name="+not-found"  options={{ headerShown: false }}/>
       </Stack>
       </ThemeProvider>
