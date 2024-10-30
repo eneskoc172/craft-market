@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const cartItems = [
@@ -37,6 +37,7 @@ const cartItems = [
 ];
 
 export default function CartScreen() {
+  const [cartList, setCartList] = useState([])
   const renderItem = ({ item }) => (
     <CartItem
       name={item.name}
@@ -46,6 +47,19 @@ export default function CartScreen() {
       image={item.image}
     />
   );
+
+  if (cartList.length === 0) {
+    return (
+      <View style={styles.emptyContainer}>
+        <Image source={require('../../assets/images/cart-empty.png')} style={styles.emptyImage} />
+        <Text style={styles.emptyTitle}>Your cart is empty</Text>
+        <Text style={styles.emptySubtitle}>Start fall in love with some good goods</Text>
+        <TouchableOpacity style={styles.startShoppingButton}>
+          <Text style={styles.startShoppingText}>Start Shopping</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -77,12 +91,12 @@ function CartItem({ name, price, totalPrice, weight, image }) {
 
       <View style={styles.info}>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.totalPrice}>Total is <Text style={{color:'#000000'}}>${totalPrice}</Text> by weight</Text>
+        <Text style={styles.totalPrice}>Total is <Text style={{ color: '#000000' }}>${totalPrice}</Text> by weight</Text>
         <Text style={styles.price}>${price} /kg</Text>
       </View>
       <View style={{ justifyContent: 'space-between', alignItems: 'flex-end' }}>
 
-      <TouchableOpacity style={styles.removeButton}>
+        <TouchableOpacity style={styles.removeButton}>
           <Text style={styles.removeButtonText}>-</Text>
         </TouchableOpacity>
 
@@ -90,7 +104,7 @@ function CartItem({ name, price, totalPrice, weight, image }) {
           <Text style={styles.changeButtonText}>Change</Text>
         </TouchableOpacity>
 
-      
+
       </View>
     </View>
   );
@@ -177,7 +191,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   removeButton: {
-   
+
     borderRadius: 8,
     width: 30,
     height: 30,
@@ -188,5 +202,40 @@ const styles = StyleSheet.create({
   removeButtonText: {
     fontSize: 20,
     color: 'black'
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  emptyImage: {
+    width: 300,
+    height: 200,
+    resizeMode:'contain',
+    marginBottom: 20,
+  },
+  emptyTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  emptySubtitle: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  startShoppingButton: {
+    backgroundColor: '#F24E61',
+    paddingHorizontal: 40,
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  startShoppingText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
