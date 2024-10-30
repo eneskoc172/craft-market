@@ -68,6 +68,9 @@ export default function RootLayout() {
            <Stack.Screen name="address" 
         options={{ headerShown: false }}
        />
+        <Stack.Screen name="my-cards" 
+        options={{ headerShown: false }}
+       />
         <Stack.Screen name="+not-found"  options={{ headerShown: false }}/>
       </Stack>
       </ThemeProvider>
