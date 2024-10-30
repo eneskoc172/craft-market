@@ -62,7 +62,7 @@ export default function ProfileScreen() {
       <ProfileOption icon="box" label="Orders" iconType="Feather" onPress={()=>router.replace('orders')}/>
       <ProfileOption icon="heart" label="Favorites" iconType="FontAwesome" onPress={()=>router.replace('favorites')}/>
       <ProfileOption icon="location-pin" label="My Addresses" iconType="Entypo" onPress={()=>router.replace('address')}/>
-      <ProfileOption icon="credit-card" label="My Cards" iconType="FontAwesome" />
+      <ProfileOption icon="credit-card" label="My Cards" iconType="FontAwesome" onPress={()=>router.replace('my-cards')}/>
 
       <Text style={styles.sectionHeader}>App Settings</Text>
       <ProfileOption
