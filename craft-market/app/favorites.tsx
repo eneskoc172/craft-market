@@ -104,8 +104,9 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     emptyImage: {
-        width: 150,
-        height: 150,
+        width: 300,
+        height: 200,
+        resizeMode:'contain',
         marginBottom: 20,
     },
     emptyTitle: {
