@@ -8,10 +8,10 @@ const product = {
   price: 4,
   unit: '/kg',
   images: [
-    require('../assets/images/broccoli.png'),
-    require('../assets/images/broccoli1.png'),
-    require('../assets/images/broccoli2.png'),
-    require('../assets/images/broccoli3.png')
+    require('../assets/images/craft/1-Photoroom (1).jpg'),
+    require('../assets/images/craft/1-Photoroom (2).jpg'),
+    require('../assets/images/craft/1-Photoroom (3).jpg'),
+    require('../assets/images/craft/1-Photoroom (4).jpg')
   ],
 };
 
