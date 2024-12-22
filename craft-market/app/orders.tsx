@@ -9,25 +9,21 @@ const OrdersScreen = () => {
             id: '1',
             date: '23/05/2020 - 23:20',
             address: '123 Main Street, City A',
-            items: ['tomato', 'orange', 'banana'],
+            items: ['one', 'one', 'one'],
             price: '$15',
         },
         {
             id: '2',
             date: '23/05/2020 - 23:20',
             address: '456 Side Street, City B',
-            items: ['broccoli', 'apple', 'grape'],
+            items: ['one', 'one', 'one'],
             price: '$25',
         },
     ];
 
     const productImages = {
-        tomato: require('../assets/images/tomato.png'),
-        orange: require('../assets/images/orange.png'),
-        banana: require('../assets/images/banana.png'),
-        broccoli: require('../assets/images/broccoli.png'),
-        apple: require('../assets/images/banana.png'),
-        grape: require('../assets/images/orange.png'),
+        one: require('../assets/images/craft/1-Photoroom (1).jpg'),
+
     };
 
     const OrderItem = ({ id, date, address, items, price }) => (
@@ -51,8 +47,8 @@ const OrdersScreen = () => {
                 data={items}
                 horizontal
                 keyExtractor={(item) => item}
-                renderItem={({ item }) => (
-                    <Image source={productImages[item]} style={styles.productImage} />
+                renderItem={({ item ,index}) => (
+                    <Image key={index.toString()}source={productImages[item]} style={styles.productImage} />
                 )}
                 showsHorizontalScrollIndicator={false}
             />
