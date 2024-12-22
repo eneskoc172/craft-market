@@ -6,7 +6,7 @@ const product = {
   name: 'Broccoli',
   category: 'Vegetables',
   price: 4,
-  unit: '/kg',
+  unit: '/Adet',
   images: [
     require('../assets/images/craft/1-Photoroom (1).jpg'),
     require('../assets/images/craft/1-Photoroom (2).jpg'),
@@ -81,7 +81,7 @@ export default function ProductDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F4FC',
+    backgroundColor: '#FFFFFF',
     padding: 28,
 
   },
@@ -155,7 +155,9 @@ const styles = StyleSheet.create({
     height:85,
     alignItems:'center',
     justifyContent:'center',
-    borderRadius:14
+    borderRadius:14,
+    borderWidth:2,
+borderColor: '#F3F3F3',
   },
   showcaseImage: {
     width: 60,
