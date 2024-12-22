@@ -9,24 +9,23 @@ const categories = [
   { id: '2', name: 'Vegetables' },
   { id: '3', name: 'Fish' },
 ];
-
 const topProducts = [
-  { id: '1', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') },
-  { id: '2', name: 'Gedang', weight: '100g', price: 10, unit: '/kg', image: require('../../assets/images/banana.png') },
-  { id: '3', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') },
-  { id: '4', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') },
-  { id: '5', name: 'Gedang', weight: '100g', price: 10, unit: '/kg', image: require('../../assets/images/banana.png') },
-  { id: '6', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/broccoli.png') }
+  { id: '1', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (1).jpg') },
+  { id: '2', name: 'Gedang', weight: '100mm', price: 10, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (2).jpg') },
+  { id: '3', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (3).jpg') },
+  { id: '1', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (4).jpg') },
+  { id: '2', name: 'Gedang', weight: '100mm', price: 10, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (5).jpg') },
+  { id: '3', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (6).jpg') }
 ];
-
 const recommendations = [
-  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/avocado.png') },
-  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/orange.png') },
-  { id: '3', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/avocado.png') },
-  { id: '4', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/orange.png') },
-  { id: '5', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/avocado.png') },
-  { id: '6', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/orange.png') },
-];
+
+    { id: '1', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (1).jpg') },
+    { id: '2', name: 'Gedang', weight: '100mm', price: 10, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (2).jpg') },
+    { id: '3', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (3).jpg') },
+    { id: '1', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (4).jpg') },
+    { id: '2', name: 'Gedang', weight: '100mm', price: 10, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (5).jpg') },
+    { id: '3', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (6).jpg') }
+  ];
 
 
 
