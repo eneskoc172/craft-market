@@ -11,7 +11,7 @@ const FavoritesScreen = () => {
             name: 'Ülker Chocolate 80% Bitter',
             price: 2.99,
             weight: '50g',
-            image: require('../assets/images/broccoli.png'),
+            image: require('../assets/images/craft/1-Photoroom (1).jpg'),
             quantity: 1,
         },
         {
@@ -19,7 +19,7 @@ const FavoritesScreen = () => {
             name: 'Eti Keyfince Almond Chocolate',
             price: 1.99,
             weight: '62g',
-            image: require('../assets/images/orange.png'),
+            image: require('../assets/images/craft/1-Photoroom (1).jpg'),
             quantity: 4,
         },
         {
@@ -27,7 +27,7 @@ const FavoritesScreen = () => {
             name: 'Eti Gurme - Karam',
             price: 0.99,
             weight: '50g',
-            image: require('../assets/images/banana.png'),
+            image: require('../assets/images/craft/1-Photoroom (1).jpg'),
             quantity: 1,
         },
         {
@@ -35,7 +35,7 @@ const FavoritesScreen = () => {
             name: 'Eti Gurme - Ahenk',
             price: 0.99,
             weight: '50g',
-            image: require('../assets/images/broccoli.png'),
+            image: require('../assets/images/craft/1-Photoroom (1).jpg'),
             quantity: 1,
         },
     ]);
