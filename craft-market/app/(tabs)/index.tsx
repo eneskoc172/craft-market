@@ -7,29 +7,29 @@ import React from 'react';
 const categories = [
   { id: '1', name: 'All' },
   { id: '2', name: 'Vegetables' },
-  { id: '3', name: 'Fish' },
+  { id: '3', name: 'Craft' },
 ];
 
 const topProducts = [
-  { id: '1', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (1).jpg') },
-  { id: '2', name: 'Gedang', weight: '100g', price: 10, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (2).jpg') },
-  { id: '3', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (3).jpg') },
-  { id: '1', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (4).jpg') },
-  { id: '2', name: 'Gedang', weight: '100g', price: 10, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (5).jpg') },
-  { id: '3', name: 'Broccoli', weight: '100g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (6).jpg') }
+  { id: '1', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (1).jpg') },
+  { id: '2', name: 'Gedang', weight: '100mm', price: 10, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (2).jpg') },
+  { id: '3', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (3).jpg') },
+  { id: '1', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (4).jpg') },
+  { id: '2', name: 'Gedang', weight: '100mm', price: 10, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (5).jpg') },
+  { id: '3', name: 'Broccoli', weight: '100mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (6).jpg') }
 ];
 
 const recommendations = [
-  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (7).jpg') },
-  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (8).jpg') },
-  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (9).jpg') },
-  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (10).jpg') },
-  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (11).jpg') },
-  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (12).jpg') },
-  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (13).jpg') },
-  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (14).jpg') },
-  { id: '1', name: 'Avocado', weight: '220g', price: 9, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (15).jpg') },
-  { id: '2', name: 'Orange', weight: '160g', price: 4, unit: '/kg', image: require('../../assets/images/craft/1-Photoroom (16).jpg') },
+  { id: '1', name: 'Avocado', weight: '220mm', price: 9, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (7).jpg') },
+  { id: '2', name: 'Orange', weight: '160mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (8).jpg') },
+  { id: '1', name: 'Avocado', weight: '220mm', price: 9, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (9).jpg') },
+  { id: '2', name: 'Orange', weight: '160mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (10).jpg') },
+  { id: '1', name: 'Avocado', weight: '220mm', price: 9, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (11).jpg') },
+  { id: '2', name: 'Orange', weight: '160mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (12).jpg') },
+  { id: '1', name: 'Avocado', weight: '220mm', price: 9, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (13).jpg') },
+  { id: '2', name: 'Orange', weight: '160mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (14).jpg') },
+  { id: '1', name: 'Avocado', weight: '220mm', price: 9, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (15).jpg') },
+  { id: '2', name: 'Orange', weight: '160mm', price: 4, unit: '/Adet', image: require('../../assets/images/craft/1-Photoroom (16).jpg') },
 ];
 
 
