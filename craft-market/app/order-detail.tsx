@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text, FlatList, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 
 const OrderDetailScreen = () => {
-    // Örnek sipariş verileri
+
     const order = {
         id: '001',
         date: '23/05/2020 - 23:20',
