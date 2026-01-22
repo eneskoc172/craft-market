@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const FavoritesScreen = () => {
-    // Favori ürünler listesi (boş veya dolu olarak değiştirilebilir)
+
     const [favorites, setFavorites] = useState([
         {
             id: '1',
@@ -40,7 +40,6 @@ const FavoritesScreen = () => {
         },
     ]);
 
-    // Favoriler boşsa gösterilecek ekran
     if (favorites.length === 0) {
         return (
             <View style={styles.emptyContainer}>
@@ -54,7 +53,6 @@ const FavoritesScreen = () => {
         );
     }
 
-    // Favoriler doluyken gösterilecek ekran
     return (
         <View style={styles.container}>
             <View style={styles.header}>
