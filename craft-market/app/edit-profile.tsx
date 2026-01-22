@@ -9,7 +9,6 @@ export default function EditProfileScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* Geri Dön Butonu ve Başlık */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.replace('explore2')}>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -17,7 +16,6 @@ export default function EditProfileScreen({ navigation }) {
         <Text style={styles.title}>Edit Profile</Text>
       </View>
 
-      {/* İsim Girişi */}
       <Text style={styles.label}>Your Name</Text>
       <TextInput
         style={styles.input}
@@ -26,7 +24,6 @@ export default function EditProfileScreen({ navigation }) {
         onChangeText={setName}
       />
 
-      {/* Telefon Numarası Girişi */}
       <Text style={styles.label}>Phone Number</Text>
       <View style={styles.phoneContainer}>
         <View style={styles.countryCodeContainer}>
@@ -43,7 +40,6 @@ export default function EditProfileScreen({ navigation }) {
         />
       </View>
 
-      {/* Güncelleme Butonu */}
       <TouchableOpacity style={styles.updateButton}>
         <Text style={styles.updateButtonText}>Update Profile</Text>
       </TouchableOpacity>
