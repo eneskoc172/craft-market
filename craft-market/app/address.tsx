@@ -4,7 +4,7 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 
 const AddressScreen = () => {
-    // Adreslerin listesi (boş veya dolu olarak değiştirilebilir)
+
     const [addresses, setAddresses] = useState([
         {
             id: '1',
@@ -72,7 +72,6 @@ const AddressScreen = () => {
         setModalVisible(false);
     };
 
-    // Adresler varken gösterilecek ekran
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -186,7 +185,6 @@ const AddressForm = ({ isEditing, address, onClose, onSave }) => {
 };
 
 const styles = StyleSheet.create({
-    // Stil ayarları burada
     container: { flex: 1, backgroundColor: '#F9F9FB' },
     header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#ddd', marginTop: 50 },
     title: { fontSize: 18, fontWeight: 'bold', color: '#333' },
