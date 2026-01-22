@@ -11,7 +11,6 @@ export default function LoginScreen() {
   const router = useRouter();
 
   const handleLogin = () => {
-    // Giriş işlemleri
     console.log('Email:', email);
     console.log('Password:', password);
     // Giriş yapıldıktan sonra yönlendirme
