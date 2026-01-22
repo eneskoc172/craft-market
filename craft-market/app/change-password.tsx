@@ -10,7 +10,7 @@ export default function ChangePasswordScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* Geri Dön Butonu ve Başlık */}
+
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.replace('explore2')}>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -18,7 +18,6 @@ export default function ChangePasswordScreen({ navigation }) {
         <Text style={styles.title}>Change Password</Text>
       </View>
 
-      {/* Eski Şifre Girişi */}
       <TextInput
         style={styles.input}
         placeholder="Old Password"
@@ -27,7 +26,6 @@ export default function ChangePasswordScreen({ navigation }) {
         onChangeText={setOldPassword}
       />
 
-      {/* Yeni Şifre Girişi */}
       <TextInput
         style={styles.input}
         placeholder="New Password"
@@ -36,7 +34,6 @@ export default function ChangePasswordScreen({ navigation }) {
         onChangeText={setNewPassword}
       />
 
-      {/* Şifre Doğrulama Girişi */}
       <TextInput
         style={styles.input}
         placeholder="Verify Password"
@@ -45,7 +42,6 @@ export default function ChangePasswordScreen({ navigation }) {
         onChangeText={setVerifyPassword}
       />
 
-      {/* Şifre Değiştir Butonu */}
       <TouchableOpacity style={styles.changeButton}>
         <Text style={styles.changeButtonText}>Change Password</Text>
       </TouchableOpacity>
