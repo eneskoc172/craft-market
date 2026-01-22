@@ -46,7 +46,6 @@ export default function ProductDetailScreen() {
 
       <Text style={styles.productPrice}>${product.price}{product.unit}</Text>
 
-      {/* Quantity Selector */}
       <View style={styles.quantitySelector}>
         <TouchableOpacity onPress={decreaseQuantity} style={styles.quantityButton}>
           <Text style={styles.quantityButtonText}>-</Text>
@@ -70,7 +69,6 @@ export default function ProductDetailScreen() {
         )}
       />
 
-      {/* Add to Cart Button */}
       <TouchableOpacity style={styles.addToCartButton}>
         <Text style={styles.addToCartButtonText}>Add to cart</Text>
       </TouchableOpacity>
