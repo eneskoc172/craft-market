@@ -17,7 +17,7 @@ const MyCardsScreen = () => {
   };
 
   const handleEditCard = (card) => {
-    setSelectedCard(card); // Seçili kartı düzenlemek için
+    setSelectedCard(card); 
     setModalVisible(true);
   };
 
